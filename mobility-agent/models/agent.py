@@ -1,5 +1,6 @@
 from typing import Dict, Any
 from datetime import datetime
+import os
 from langchain.agents import AgentExecutor, create_openai_functions_agent
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chat_models import init_chat_model
@@ -11,10 +12,13 @@ class MobilityAgent:
     def __init__(
         self,
         profile: PersonalProfile,
-        gaode_map_key: str = "ba4a49acc350b56513915a3b2b2d5b8f",
-        model_name: str = "qwen-plus",
-        api_key: str = "sk-94b8a8c203764fd5ba6be83ed52a4a4c"
+        gaode_map_key: str = os.getenv("GAODE_MAP_KEY"),
+        model_name: str = os.getenv("MODEL_NAME", "qwen-plus"),
+        api_key: str = os.getenv("API_KEY")
     ):
+        if not all([gaode_map_key, api_key]):
+            raise ValueError("必需的环境变量未设置：GAODE_MAP_KEY 和 API_KEY")
+            
         self.profile = profile
         self.mcp_client = MCPClient(gaode_map_key)
         self.llm = init_chat_model(

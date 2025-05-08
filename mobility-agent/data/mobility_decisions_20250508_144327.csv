@@ -1,0 +1,4 @@
+timestamp,decision_duration,weather,temperature,query,age,occupation,travel_preference,has_car,has_bike,max_walking_distance,decision_steps,thought_process,final_decision
+2025-05-08 14:43:29.359866,43.036546,晴朗,25,我从同济大学嘉定校区到同济大学四平路校区，应该怎么走？,22,大学生,economic,False,True,2.0,5,未能解析出思考过程,"公共交通的选项之一包括步行654米到最近的公交站，乘坐北安跨线公交车约54分钟到达国康路四平路站，再步行400米到达目的地。整个行程预计耗时约2小时3分钟。
+
+最终决定：我将选择公共交通工具前往同济大学四平路校区，因为虽然骑行是一个经济的选择，但考虑到距离和时间，使用公共交通会更加节省时间和体力。我将步行至最近的公交站，然后乘坐公共交通到达目的地。"
