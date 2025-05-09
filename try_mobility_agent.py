@@ -9,6 +9,9 @@ import asyncio
 import pandas as pd
 from datetime import datetime
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class TravelPreference(Enum):
     COMFORT = "comfort"      # 注重舒适度
@@ -38,9 +41,9 @@ class MobilityAgent:
     def __init__(
         self,
         profile: PersonalProfile,
-        gaode_map_key: str = "ba4a49acc350b56513915a3b2b2d5b8f",
-        model_name: str = "qwen-plus",
-        api_key: str = "sk-94b8a8c203764fd5ba6be83ed52a4a4c"
+        gaode_map_key: str = os.getenv("GAODE_MAP_KEY"),
+        model_name: str = os.getenv("MODEL_NAME"),
+        api_key: str = os.getenv("API_KEY")
     ):
         self.profile = profile
         self.gaode_map_key = gaode_map_key
