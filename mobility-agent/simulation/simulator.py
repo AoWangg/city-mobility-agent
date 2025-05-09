@@ -3,7 +3,6 @@ import asyncio
 from models.agent import MobilityAgent
 from models.profile import PersonalProfile
 from models.recorder import DecisionRecorder
-from config.settings import API_CONFIG
 import os
 from dotenv import load_dotenv
 

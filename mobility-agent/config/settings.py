@@ -1,13 +1,5 @@
 from typing import Dict, Any
 
-# API配置
-API_CONFIG = {
-    "GAODE_MAP_KEY": "ba4a49acc350b56513915a3b2b2d5b8f",
-    "MODEL_NAME": "qwen-plus",
-    "API_KEY": "sk-94b8a8c203764fd5ba6be83ed52a4a4c",
-    "BASE_URL": "https://dashscope.aliyuncs.com/compatible-mode/v1"
-}
-
 # 默认天气条件
 DEFAULT_WEATHER_CONDITIONS = [
     ("晴朗", 25),
