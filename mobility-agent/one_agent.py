@@ -8,7 +8,7 @@ async def main():
     # 创建单个智能体的个人档案
     profile = PersonalProfile(
         age=28,
-        occupation="上班族",
+        occupation="同济大学学生",
         travel_preference=TravelPreference.SPEED,
         has_car=True,
         max_walking_distance=1.0

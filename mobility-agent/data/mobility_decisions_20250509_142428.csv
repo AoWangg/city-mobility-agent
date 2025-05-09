@@ -1,0 +1,4 @@
+timestamp,decision_duration,weather,temperature,query,age,occupation,travel_preference,has_car,has_bike,max_walking_distance,decision_steps,thought_process,final_decision
+2025-05-09 14:24:28.615576,22.277608,晴朗,25,我从同济大学嘉定校区到同济大学四平路校区，应该怎么走？,28,同济大学学生,speed,True,False,1.0,3,未能解析出思考过程,"最后，我将根据驾车路线规划的结果进行评估。从嘉定校区到四平路校区的距离大约为33.79公里，预计耗时约为40分钟。
+
+最终决定：我选择开车从同济大学嘉定校区出发，沿着规划的路线行驶，预计耗时40分钟左右到达同济大学四平路校区。"
