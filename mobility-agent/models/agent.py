@@ -4,9 +4,12 @@ import os
 from langchain.agents import AgentExecutor, create_openai_functions_agent
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chat_models import init_chat_model
+from dotenv import load_dotenv
 
 from models.profile import PersonalProfile
 from models.mcp_client import MCPClient
+
+load_dotenv()
 
 class MobilityAgent:
     def __init__(

@@ -4,6 +4,10 @@ from models.agent import MobilityAgent
 from models.profile import PersonalProfile
 from models.recorder import DecisionRecorder
 from config.settings import API_CONFIG
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class MobilitySimulator:
     """出行决策仿真器"""
@@ -15,9 +19,9 @@ class MobilitySimulator:
         """创建智能体实例"""
         return MobilityAgent(
             profile=profile,
-            gaode_map_key=API_CONFIG["GAODE_MAP_KEY"],
-            model_name=API_CONFIG["MODEL_NAME"],
-            api_key=API_CONFIG["API_KEY"]
+            gaode_map_key=os.getenv("GAODE_MAP_KEY"),
+            model_name=os.getenv("MODEL_NAME"),
+            api_key=os.getenv("API_KEY")
         )
         
     async def run_single_scenario(
