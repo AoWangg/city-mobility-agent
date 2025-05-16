@@ -100,3 +100,5 @@ if __name__ == "__main__":
 ## 注意事项
 
 - 请确保正确配置 API 密钥
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/AoWangg/city-mobility-agent)
