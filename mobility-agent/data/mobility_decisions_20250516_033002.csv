@@ -1,0 +1,4 @@
+timestamp,decision_duration,weather,temperature,query,age,occupation,travel_preference,has_car,has_bike,max_walking_distance,decision_steps,thought_process,final_decision
+2025-05-16 03:30:02.410096,23.675353,晴朗,25,,28,金融从业者,speed,False,False,1.0,1,未能解析出思考过程,"根据高德地图的查询结果，从我家到同济大学四平路校区有多种公交方案。其中最快捷的方案是步行至天目中路晋元路站，乘坐308路公交车到达大连路周家嘴路站，再步行至目的地。整个行程大约需要50分钟，步行距离约为1.5公里。
+
+最终决定：我将选择乘坐308路公交车前往同济大学四平路校区。这种方式既节省时间，又避免了长时间步行带来的疲劳。此外，考虑到新增的直达公交线路，我相信这趟旅程会更加舒适和便捷。"

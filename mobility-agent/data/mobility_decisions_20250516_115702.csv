@@ -1,0 +1,2 @@
+timestamp,decision_duration,weather,temperature,query,age,occupation,travel_preference,has_car,has_bike,max_walking_distance,decision_steps,thought_process,final_decision,tool_calls
+2025-05-16 11:57:02.474324,9.167735,晴朗,25,我需要从同济大学嘉定校区到同济大学四平路校区，怎么走？,28,青年教师，需要在同济大学两校区往返上课,speed,False,False,1.0,1,未能解析出思考过程,,"[{'tool': '_Exception', 'input': 'Invalid or incomplete response', 'output': 'Invalid or incomplete response'}]"

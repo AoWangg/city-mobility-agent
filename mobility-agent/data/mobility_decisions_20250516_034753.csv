@@ -1,0 +1,2 @@
+timestamp,decision_duration,weather,temperature,query,age,occupation,travel_preference,has_car,has_bike,max_walking_distance,decision_steps,thought_process,final_decision
+2025-05-16 03:47:54.312918,18.813221,晴朗,25,我想向上海交通管理部门提一条建议，建议新增一条线路来方便我出行，这条线路应该是从哪里到哪里，经过哪些站点,28,金融从业者,speed,False,False,1.0,1,未能解析出思考过程,

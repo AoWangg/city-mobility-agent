@@ -55,13 +55,17 @@ class ScenarioBuilder:
         self.profiles = []
         self.weather_conditions = []
         self.queries = []
-        
+        self.traffic_conditions = []
     def add_profile(self, profile: PersonalProfile) -> 'ScenarioBuilder':
         self.profiles.append(profile)
         return self
         
     def add_weather_condition(self, weather: str, temperature: float) -> 'ScenarioBuilder':
         self.weather_conditions.append((weather, temperature))
+        return self
+    
+    def add_traffic_condition(self, traffic: str) -> 'ScenarioBuilder':
+        self.traffic_conditions.append(traffic)
         return self
         
     def add_query(self, query: str) -> 'ScenarioBuilder':
@@ -74,10 +78,11 @@ class ScenarioBuilder:
         if not self.weather_conditions:
             self.weather_conditions = get_default_weather_conditions()
         if not self.queries:
-            self.queries = ["我从同济大学嘉定校区到同济大学四平路校区，应该怎么走？"]
+            self.queries = [""]
             
         return {
             "profiles": self.profiles,
             "weather_conditions": self.weather_conditions,
-            "queries": self.queries
+            "queries": self.queries,
+            "traffic_conditions": self.traffic_conditions
         } 

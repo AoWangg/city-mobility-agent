@@ -28,11 +28,12 @@ class MobilitySimulator:
         profile: PersonalProfile,
         query: str,
         weather: str,
-        temperature: float
+        temperature: float,
+        traffic_conditions: str
     ) -> Dict[str, Any]:
         """运行单个场景"""
         agent = self.create_agent(profile)
-        result = await agent.plan_route(query, weather, temperature)
+        result = await agent.plan_route(query, weather, temperature, traffic_conditions)
         self.recorder.add_record(result)
         return result
         
@@ -40,13 +41,15 @@ class MobilitySimulator:
         self,
         profiles: List[PersonalProfile],
         queries: List[str],
-        weather_conditions: List[tuple]
+        weather_conditions: List[tuple],
+        traffic_conditions: List[str]
     ) -> List[Dict[str, Any]]:
         """批量运行多个场景"""
         results = []
         
         for weather, temp in weather_conditions:
             print(f"\n当前天气：{weather}，温度：{temp}度")
+            print(f"当前交通情况是：{traffic_conditions}")
             print("-" * 50)
             
             for profile in profiles:
@@ -55,7 +58,8 @@ class MobilitySimulator:
                         profile=profile,
                         query=query,
                         weather=weather,
-                        temperature=temp
+                        temperature=temp,
+                        traffic_conditions=traffic_conditions
                     )
                     print(f"\n{result['profile'].occupation}的选择：")
                     print(result['result'])

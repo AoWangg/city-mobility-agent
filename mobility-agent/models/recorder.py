@@ -20,13 +20,15 @@ class DecisionRecorder:
             'timestamp', 'decision_duration', 'weather', 'temperature', 
             'query', 'age', 'occupation', 'travel_preference', 'has_car', 
             'has_bike', 'max_walking_distance', 'decision_steps', 
-            'thought_process', 'final_decision'
+            'thought_process', 'final_decision', 'tool_calls'
         ]
         df = pd.DataFrame(columns=headers)
         df.to_csv(self.filepath, index=False, encoding='utf-8')
         
     def add_record(self, decision_result: Dict[str, Any]):
         profile = decision_result['profile']
+        tool_calls_str = str(decision_result.get('tool_calls', []))
+        
         record = {
             'timestamp': decision_result['query_time'],
             'decision_duration': decision_result['decision_duration'],
@@ -41,7 +43,8 @@ class DecisionRecorder:
             'max_walking_distance': profile.max_walking_distance,
             'decision_steps': decision_result['steps'],
             'thought_process': decision_result.get('thought_process', ''),
-            'final_decision': decision_result.get('final_decision', '')
+            'final_decision': decision_result.get('final_decision', ''),
+            'tool_calls': tool_calls_str
         }
         # 实时保存单条记录
         df = pd.DataFrame([record])

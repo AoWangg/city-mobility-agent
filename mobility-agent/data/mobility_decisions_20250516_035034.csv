@@ -1,0 +1,2 @@
+timestamp,decision_duration,weather,temperature,query,age,occupation,travel_preference,has_car,has_bike,max_walking_distance,decision_steps,thought_process,final_decision
+2025-05-16 03:50:34.513947,14.840599,晴朗,25,我想向上海交通管理部门提一条建议，建议新增一条线路来方便我出行，这条线路应该是从哪里到哪里，经过哪些站点，建议通过投诉功能来反馈,28,金融从业者,speed,False,False,1.0,1,未能解析出思考过程,我已经成功提交了建议。投诉内容为：建议新增一条从浙江中路到陆家嘴的直达公交线路，经过南京东路、外滩、东昌路等重要站点，以方便市民通勤和出行。相关部门会对此进行考虑，希望未来能有更便捷的交通选择。
