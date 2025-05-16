@@ -56,30 +56,39 @@ from models.recorder import DecisionRecorder
 from models.profile import PersonalProfile, TravelPreference
 
 async def main():
-    # 创建单个智能体的个人档案
     profile = PersonalProfile(
+        home_address_wgsx=121.296123,
+        home_address_wgsy=31.324903,
+        home_address_street="同济大学嘉定校区",
+        home_address_district="上海市嘉定区",
+        home_address_peoples=3,
+        home_address_children=1,
+        home_address_motorcycles=1,
+        home_address_cars=1,
         age=28,
-        occupation="上班族",
+        gender="男",
+        occupation="青年教师，需要在同济大学两校区往返上课",
         travel_preference=TravelPreference.SPEED,
-        has_car=True,
+        has_car=False,
         max_walking_distance=1.0
     )
     
-    # 创建场景构建器并添加单个智能体
     scenario = ScenarioBuilder()\
         .add_profile(profile)\
         .add_weather_condition("晴朗", 25)\
-        .add_query("我从同济大学嘉定校区到同济大学四平路校区，应该怎么走？")\
+        .add_traffic_condition("上海市新增了一条从绿苑路站到同济大学四平路校区的直达的公交线路")\
+        .add_query(f"""
+                   回答下列问卷，在最终的回答中给我完整的问卷答案：
+                   """)\
         .build()
     
-    # 创建仿真器
     simulator = MobilitySimulator(DecisionRecorder())
     
-    # 运行仿真
     results = await simulator.run_batch_scenarios(
         profiles=scenario["profiles"],
         queries=scenario["queries"],
-        weather_conditions=scenario["weather_conditions"]
+        weather_conditions=scenario["weather_conditions"],
+        traffic_conditions=scenario["traffic_conditions"]
     )
     
     print(f"\n仿真完成，共生成 {len(results)} 条决策记录")
